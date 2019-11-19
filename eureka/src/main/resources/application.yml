@@ -2,7 +2,10 @@ eureka:
   client:
     server-url:
       defaultZone: http://localhost:8761/eureka/ #注册中心注册地址
+#      defaultZone: http://localhost:8762/eureka/,http://localhost:8763/eureka/ #高可用
     register-with-eureka: false #表示不将eureka注册为微服务
+  server:
+    enable-self-preservation: false #关闭自我保护机制，开发环境配置此项，不然重启客户端eureka网页控制台会有红色警告
 spring:
   application:
     name: eureka
